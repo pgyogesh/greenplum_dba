@@ -1,0 +1,72 @@
+# Easier navigation: .., ..., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias pydir="cd ~/projects/python"      # This is where I store my python programs
+alias shdir="cd ~/projects/shell"       # This is where I store my shell Scripts
+
+# Easier file & directory listing
+alias l='ls -CF'                        # directories and files in columns
+alias la='ls -A'                        # directories and files incl. hidden in columns
+alias ll='ls -ahlF'                     # everything with extra info as a list
+alias lsd='ls -l | grep "^d"'           # only directories as a list
+alias lu='ls -ltrh | tail -5'           # 5 Recently updated files or Directories
+
+alias python='python3.6'
+
+# Shortcuts for MarkLogic, XML, XQuery
+
+alias xrun='xqilla'                     #XQilla is an XQuery∞ and XPath 2∞ library and command line utility written in C++, implemented on top of the
+                                        #Xerces-C∞ library. It is made available under the terms of the Apache License v2.
+# Shortcuts for Greenplum
+alias gps='gpstate'
+alias gpse='gpstate -e'
+alias gpsf='gpstate -f'
+alias gpsshall='gpssh -f ~/gpconfigs/hostfile_all'
+alias gpsshseg='gpssh -f ~/gpconfigs/hostfile_seg'
+
+# Shortcuts for PostgreSQL
+alias pgstrt="pg_ctl start -D $PGDATA"
+alias pgstp="pg_ctl stop -D $PGDATA"
+
+
+# Shortcuts for PostgreSQL and Greenplum
+# Database Locking:
+alias blockers='psql -f ~/greenplum/lock_monitoring/blockers_info.sql'
+alias waiters='psql -f ~/greemplum/lock_monitoring/waiters_info.sql'
+alias locks='psql -f ~/greenplum/lock_monitoring/brief_info.sql'
+
+# Database Activity Monitoring:
+alias pgact='psql -f ~/greenplum/database_activity_monitoring/pg_stat.sql'
+alias pgactr='psql -f ~/greenplum/database_activity_monitoring/pg_stat_readable.sql'
+
+# Personal Shortcuts
+alias p="cd ~/projects"
+alias r="cd ~/git"                      # Goto git directory
+alias c="clear"                         # Clear Screen
+alias sbrc="source ~/.bashrc"           # Source .bashrc
+alias v="vim"
+
+# Git related shortcuts
+alias g="git"
+alias gs="git status"
+alias ga="git add -A ."                 # Add files in `pwd` to INDEX
+alias gst="git st"
+alias gps="git push"                    # Update repo with local repo
+alias gpl="git pull"                    # Update local repo with remote repo
+alias gc="git commit"                   # Commit to HEAD
+alias gl="git lg"
+
+
+# MarkLogic
+alias mlhost1='ssh cent@mlhost1'
+alias mlhost2='ssh cent@mlhost2'
+alias mlhost3='ssh cent@mlhost3'
+
+
+# Always use color output for `ls`
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    alias ls="command ls -G"
+else
+    alias ls="command ls --color"
+    export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+fi

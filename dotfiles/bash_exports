@@ -1,0 +1,9 @@
+# Greenplum
+export PGDATA="/pgdata/"
+export PGPORT=5432
+export PGDATABASE='jadhavy'
+export PGUSER='jadhavy'
+# Personal
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='5;80;40'
+export TERM="screen-256color"
